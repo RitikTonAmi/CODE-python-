@@ -14,3 +14,101 @@ Output:
 The maximum is 8
 The minimum is 0
 The mean is 4.5
+
+TEMP TUPLE QUESTIONS
+
+Q1
+import random
+
+n=int(input('Enter length of tuple: '))
+
+nums=()
+for i in range(n):
+    a=random.randint(0,100)
+    nums+=(a,)
+
+print(nums)
+
+new_nums=()
+
+for i in range(0,n,2):
+    new_nums+=(nums[i],)
+    
+print(new_nums)
+
+Output:
+Enter length of tuple: 100
+(1, 18, 18, 73, 31, 47, 78, 6, 40, 67, 55, 10, 24, 86, 43, 78, 87, 53, 55, 75, 65, 37, 5, 29, 12, 71, 21, 64, 1, 18, 60, 33, 13, 80, 72, 39, 61, 66, 84, 26, 89, 68, 40, 87, 85, 95, 62, 77, 94, 50, 55, 47, 97, 52, 42, 9, 52, 49, 75, 68, 43, 99, 25, 60, 46, 71, 42, 95, 53, 64, 18, 69, 97, 54, 16, 9, 85, 92, 99, 74, 42, 15, 32, 57, 78, 2, 44, 8, 36, 80, 91, 55, 99, 65, 56, 28, 93, 73, 16, 92)
+(1, 18, 31, 78, 40, 55, 24, 43, 87, 55, 65, 5, 12, 21, 1, 60, 13, 72, 61, 84, 89, 40, 85, 62, 94, 55, 97, 42, 52, 75, 43, 25, 46, 42, 53, 18, 97, 16, 85, 99, 42, 32, 78, 44, 36, 91, 99, 56, 93, 16)
+
+Q2
+import random
+
+r=()
+for i in range(10):
+    a=random.randint(0,100)
+    r=(a,0)
+    print(r)
+
+Output:
+(91, 0)
+(14, 0)
+(13, 0)
+(62, 0)
+(69, 0)
+(1, 0)
+(40, 0)
+(25, 0)
+(60, 0)
+(37, 0)
+
+Q3
+days=('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday')
+n=int(input('Enter a no. from 1-7: '))
+
+if n>0 and n<8:
+    print(days[n-1])
+else:
+    print('Invalid \n Choose from 1-7 next time')
+
+Output:
+Enter a no. from 1-7: 5
+Friday
+
+Q4
+a=()
+while True:
+    b=input('Do you want to add an element (Y/N): ')
+    if b=='Y':
+        c=int(input('Enter integer element: '))
+        a+=(c,)
+    elif b=='N':
+        break
+    else:
+        print('Choose between Y & N.')
+print(a)
+
+r=()
+for i in range(len(a)):
+    if i%2==0:
+        r+=(a[i]/2,)
+    else:
+        r+=(a[i]*2,)
+print(r)
+
+Output:
+Do you want to add an element (Y/N): Y
+Enter integer element: 5
+Do you want to add an element (Y/N): Y
+Enter integer element: 9
+Do you want to add an element (Y/N): Y
+Enter integer element: 32
+Do you want to add an element (Y/N): Y
+Enter integer element: 44
+Do you want to add an element (Y/N): Y
+Enter integer element: 65
+Do you want to add an element (Y/N): Y
+Enter integer element: 21
+Do you want to add an element (Y/N): N
+(5, 9, 32, 44, 65, 21)
+(2.5, 18, 16.0, 88, 32.5, 42)
