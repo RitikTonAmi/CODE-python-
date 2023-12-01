@@ -1,0 +1,16 @@
+L1=[5,0,8,1,0,4,6,8,8,5]
+print(L1)
+
+print('The maximum is ', max(L1))
+
+print('The minimum is ', min(L1))
+
+total=sum(L1)
+mean=total/len(L1)
+print('The mean is ', mean)
+
+Output:
+[5, 0, 8, 1, 0, 4, 6, 8, 8, 5]
+The maximum is 8
+The minimum is 0
+The mean is 4.5
