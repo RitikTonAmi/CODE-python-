@@ -113,6 +113,103 @@ Do you want to add an element (Y/N): N
 (5, 9, 32, 44, 65, 21)
 (2.5, 18, 16.0, 88, 32.5, 42)
 
+"""
+1. WAP to input a tuple and display it. Then update the tuple by replacing each even element of the tuple by its half, and each odd element of the tuple by its double.
+
+2.WAP to input the day number of a week day and display the corresponding day name. For example, if the input is 1, the output should be ‘Monday’, and if the input is 7, the output should be ‘Sunday’.
+
+3. A robot is to be programmed to mark 10 random points on the positive x-axis of a coordinate plane keeping maximum value of abscissa at 100. Then the coordinates of all these points have to be displayed. Write a program which can be followed by this robot.
+
+4.WAP to create a tuple NUMBERS of n random integers and display the tuple. The program should then create another tuple named NEW_NUMBERS in such a way that NEW_NUMBERS contains the elements from the alternate locations of NUMBERS starting from 0. Then display the value of NEW_TUPLES. For example,
+
+If NUMBERS contains 2, 5, 9, 14, 17, 8, 19, 16 Then NEW_NUMBERS should contain 2, 9, 17, 19
+"""
+
+# 1
+
+intup = ()
+
+while True:
+  ch = input("\nDo you want to enter a tuple element? (y/n): ")
+  if ch == 'y':
+    intup += int(input("\nEnter the element: ")),
+  elif ch == 'n':
+    break
+  else:
+    print("\nInvalid!")
+
+print("\nThe tuple you have entered is", intup)
+
+outtup = ()
+
+for i in range(len(intup)):
+  if i % 2 == 0:
+    outtup += intup[i] / 2,
+  else:
+    outtup += intup[i] / 2,
+
+print("\nModified tuple:", outtup)
+
+#2
+
+intup = ()
+
+while True:
+  ch = input("\nDo you want to enter a tuple element? (y/n): ")
+  if ch == 'y':
+    intup += int(input("\nEnter the element: ")),
+  elif ch == 'n':
+    break
+  else:
+    print("\nInvalid!")
+
+print("\nThe tuple you have entered is", intup)
+
+outtup = ()
+
+for i in intup:
+  if i % 2 == 0:
+    outtup += intup[i] / 2,
+  else:
+    outtup += intup[i] * 2,
+
+intup = outtup
+
+print("\nModified tuple:", intup)
+
+# 3
+
+import random as r
+
+print("Points are: ", end='')
+
+for i in range(10):
+  x = r.randint(0, 100)
+  print((x, 0), end='')
+
+# 4
+
+import random as r
+
+n = int(input("Enter value of n: "))
+
+NUMBERS = ()
+
+for i in range(n):
+  x = r.randint(0, 100)
+  NUMBERS += x,
+
+print("Tuple NUMBERS:", NUMBERS)
+
+NEW_NUMBERS = ()
+
+for i in range(len(NUMBERS)):
+  if i % 2 == 0:
+    NEW_NUMBERS += NUMBERS[i],
+
+print("Tuple NEW_NUMBERS: ", NEW_NUMBERS)
+
+
 DICTIONARY
 
 import random
