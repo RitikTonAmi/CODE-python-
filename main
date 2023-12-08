@@ -1,252 +1,49 @@
-L1=[5,0,8,1,0,4,6,8,8,5]
-print(L1)
+D={
+    'hello':'namaste',
+    'welcome':'svaagat',
+    'thank you':'dhanyavaad',
+    'please':'kripaya',
+    'hope':'aasha',
+    'power':'shakti',
+    'wish':'ichchha',
+    'soul':'aatma',
+    'believe':'vishvaas',
+    'education':'shiksha'
+}
 
-print('The maximum is ', max(L1))
+EH=input('Would you like to enter an english (e) word or a hindi (h) word? : ')
 
-print('The minimum is ', min(L1))
+if EH=='e':
+    word=input('Enter english word: ')
+    for key, value in D.items():
+        if key==word:
+            print(word,':',value)
+            break
+        else:
+            add=input('Would you like to add it in the dictionary? (y/n) : ')
+            if add=='y':
+                hindi=input('What is the word in hindi? : ')
+                D[word] = hindi
+            elif add=='n':
+                print('Ok, thankyou for using my program!')
+            else:
+                print('Invalid')
 
-total=sum(L1)
-mean=total/len(L1)
-print('The mean is ', mean)
-
-Output:
-[5, 0, 8, 1, 0, 4, 6, 8, 8, 5]
-The maximum is 8
-The minimum is 0
-The mean is 4.5
-
-TEMP TUPLE QUESTIONS
-
-Q1
-import random
-
-n=int(input('Enter length of tuple: '))
-
-nums=()
-for i in range(n):
-    a=random.randint(0,100)
-    nums+=(a,)
-
-print(nums)
-
-new_nums=()
-
-for i in range(0,n,2):
-    new_nums+=(nums[i],)
-    
-print(new_nums)
-
-Output:
-Enter length of tuple: 100
-(1, 18, 18, 73, 31, 47, 78, 6, 40, 67, 55, 10, 24, 86, 43, 78, 87, 53, 55, 75, 65, 37, 5, 29, 12, 71, 21, 64, 1, 18, 60, 33, 13, 80, 72, 39, 61, 66, 84, 26, 89, 68, 40, 87, 85, 95, 62, 77, 94, 50, 55, 47, 97, 52, 42, 9, 52, 49, 75, 68, 43, 99, 25, 60, 46, 71, 42, 95, 53, 64, 18, 69, 97, 54, 16, 9, 85, 92, 99, 74, 42, 15, 32, 57, 78, 2, 44, 8, 36, 80, 91, 55, 99, 65, 56, 28, 93, 73, 16, 92)
-(1, 18, 31, 78, 40, 55, 24, 43, 87, 55, 65, 5, 12, 21, 1, 60, 13, 72, 61, 84, 89, 40, 85, 62, 94, 55, 97, 42, 52, 75, 43, 25, 46, 42, 53, 18, 97, 16, 85, 99, 42, 32, 78, 44, 36, 91, 99, 56, 93, 16)
-
-Q2
-import random
-
-r=()
-for i in range(10):
-    a=random.randint(0,100)
-    r=(a,0)
-    print(r)
-
-Output:
-(91, 0)
-(14, 0)
-(13, 0)
-(62, 0)
-(69, 0)
-(1, 0)
-(40, 0)
-(25, 0)
-(60, 0)
-(37, 0)
-
-Q3
-days=('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday')
-n=int(input('Enter a no. from 1-7: '))
-
-if n>0 and n<8:
-    print(days[n-1])
+elif EH=='h':
+    word=input('Enter hindi word: ')
+    for key, value in D.items():
+        if value==word:
+            print(word,':',key)
+            break
+        else:
+            add=input('Would you like to add it in the dictionary? (y/n) : ')
+            if add=='y':
+                english=input('What is the word in english? : ')
+                D[english] = word
+            elif add=='n':
+                print('Ok, thankyou for using my program!')
+            else:
+                print('Invalid')
 else:
-    print('Invalid \n Choose from 1-7 next time')
-
-Output:
-Enter a no. from 1-7: 5
-Friday
-
-Q4
-a=()
-while True:
-    b=input('Do you want to add an element (Y/N): ')
-    if b=='Y':
-        c=int(input('Enter integer element: '))
-        a+=(c,)
-    elif b=='N':
-        break
-    else:
-        print('Choose between Y & N.')
-print(a)
-
-r=()
-for i in range(len(a)):
-    if i%2==0:
-        r+=(a[i]/2,)
-    else:
-        r+=(a[i]*2,)
-print(r)
-
-Output:
-Do you want to add an element (Y/N): Y
-Enter integer element: 5
-Do you want to add an element (Y/N): Y
-Enter integer element: 9
-Do you want to add an element (Y/N): Y
-Enter integer element: 32
-Do you want to add an element (Y/N): Y
-Enter integer element: 44
-Do you want to add an element (Y/N): Y
-Enter integer element: 65
-Do you want to add an element (Y/N): Y
-Enter integer element: 21
-Do you want to add an element (Y/N): N
-(5, 9, 32, 44, 65, 21)
-(2.5, 18, 16.0, 88, 32.5, 42)
-
-"""
-1. WAP to input a tuple and display it. Then update the tuple by replacing each even element of the tuple by its half, and each odd element of the tuple by its double.
-
-2.WAP to input the day number of a week day and display the corresponding day name. For example, if the input is 1, the output should be ‘Monday’, and if the input is 7, the output should be ‘Sunday’.
-
-3. A robot is to be programmed to mark 10 random points on the positive x-axis of a coordinate plane keeping maximum value of abscissa at 100. Then the coordinates of all these points have to be displayed. Write a program which can be followed by this robot.
-
-4.WAP to create a tuple NUMBERS of n random integers and display the tuple. The program should then create another tuple named NEW_NUMBERS in such a way that NEW_NUMBERS contains the elements from the alternate locations of NUMBERS starting from 0. Then display the value of NEW_TUPLES. For example,
-
-If NUMBERS contains 2, 5, 9, 14, 17, 8, 19, 16 Then NEW_NUMBERS should contain 2, 9, 17, 19
-"""
-
-# 1
-
-intup = ()
-
-while True:
-  ch = input("\nDo you want to enter a tuple element? (y/n): ")
-  if ch == 'y':
-    intup += int(input("\nEnter the element: ")),
-  elif ch == 'n':
-    break
-  else:
-    print("\nInvalid!")
-
-print("\nThe tuple you have entered is", intup)
-
-outtup = ()
-
-for i in range(len(intup)):
-  if i % 2 == 0:
-    outtup += intup[i] / 2,
-  else:
-    outtup += intup[i] / 2,
-
-print("\nModified tuple:", outtup)
-
-#2
-
-intup = ()
-
-while True:
-  ch = input("\nDo you want to enter a tuple element? (y/n): ")
-  if ch == 'y':
-    intup += int(input("\nEnter the element: ")),
-  elif ch == 'n':
-    break
-  else:
-    print("\nInvalid!")
-
-print("\nThe tuple you have entered is", intup)
-
-outtup = ()
-
-for i in intup:
-  if i % 2 == 0:
-    outtup += intup[i] / 2,
-  else:
-    outtup += intup[i] * 2,
-
-intup = outtup
-
-print("\nModified tuple:", intup)
-
-# 3
-
-import random as r
-
-print("Points are: ", end='')
-
-for i in range(10):
-  x = r.randint(0, 100)
-  print((x, 0), end='')
-
-# 4
-
-import random as r
-
-n = int(input("Enter value of n: "))
-
-NUMBERS = ()
-
-for i in range(n):
-  x = r.randint(0, 100)
-  NUMBERS += x,
-
-print("Tuple NUMBERS:", NUMBERS)
-
-NEW_NUMBERS = ()
-
-for i in range(len(NUMBERS)):
-  if i % 2 == 0:
-    NEW_NUMBERS += NUMBERS[i],
-
-print("Tuple NEW_NUMBERS: ", NEW_NUMBERS)
-
-
-DICTIONARY
-
-import random
-n=int(input('Enter length of list: '))
-
-L = [1]
-for i in range(n):
-    L+=[random.randint(0,50)]
-
-D = {}
-for i in L:
-    if (i in D):
-        D[i] += 1
-    else:
-        D[i] = 1
- 
-for key, value in D.items():
-    print(key,':',value)
-
-Output:
-Enter length of list: 25
-1 : 1
-22 : 2
-12 : 1
-40 : 1
-47 : 3
-15 : 1
-14 : 2
-18 : 2
-24 : 1
-35 : 1
-44 : 3
-16 : 1
-29 : 1
-45 : 1
-34 : 1
-46 : 1
-23 : 1
-28 : 1
-0 : 1
+    print('Invalid')
+        
